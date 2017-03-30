@@ -41,8 +41,10 @@ public class Main {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				codirovanie.setVisible(false);
+				
+				Rascodirovanie.setLocation(codirovanie.getLocation());
 				Rascodirovanie.setVisible(true);
+				codirovanie.setVisible(false);
 				radiob2_decod.setSelected(true);
 
 		    	System.out.println("radiob2_cod");
@@ -59,8 +61,12 @@ public class Main {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			  if(radiob1_decod.isSelected()) 
+			
+			  codirovanie.setLocation(Rascodirovanie.getLocation());
 			  codirovanie.setVisible(true);
 			  Rascodirovanie.setVisible(false);
+			
+			
 			  radiob1_cod.setSelected(true);
 			  System.out.println("radiob1_decod");
 			}
@@ -71,9 +77,11 @@ public class Main {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
 				Rascodirovanie.setVisible(true);
 				codirovanie.setVisible(false);
+				//Rascodirovanie.setLocation(codirovanie.getLocation());
+				
+		
 				
 				System.out.println("radiob2_decod");
 				
