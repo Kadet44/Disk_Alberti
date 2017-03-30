@@ -20,10 +20,25 @@ public class CodeAlfavit {
 
 	public CodeAlfavit(String name_Code) {
 		
-		if (name_Code == "abcd"){this.formCodeLat(); }
+		if (name_Code == "abcd"){this.formCodeLat_figure(); }
 		if (name_Code == "Ieroglif"){  this.formCodeIerog(); 	}
 		
 	
+	}
+	private void formCodeLat_figure(){
+		codeAlfavit = new char[43];
+		char[] code_Lat ={'v','w','1','x','m','t','u','z','y','2','3','n','o','p','l','s','q','r','4','i','c','j','d','e','k','a','g','f','b','h','5','6','ʚ','ʛ','ʜ','ʝ','ʞ','ʠ','ʢ','ɕ','ȸ','ǂ'};
+		for(char i:code_Lat)		
+	    {
+			//System.out.print(i);
+			codeAlfavit[n]=i;
+		n++;
+	    }
+		
+	}
+	
+	private void formCodeIerog_figure(){
+		
 	}
 	
 	private void formCodeIerog(){
