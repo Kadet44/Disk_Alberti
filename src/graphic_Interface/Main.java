@@ -20,6 +20,7 @@ public class Main {
   
     codirovanie.setVisible(true);
     
+    
     JRadioButton radiob2_cod = codirovanie.getRadiob2();
     JRadioButton radiob2_decod = Rascodirovanie.getRadiob2();
 	JRadioButton radiob1_cod = codirovanie.getRadiob1();

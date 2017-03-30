@@ -1,5 +1,7 @@
 package workBrunch;
 
+import graphic_Interface.Graphic_ilement;
+
 public class Rascodirovanie {
 	public Rascodirovanie(){}
 	
@@ -11,7 +13,7 @@ public class Rascodirovanie {
 	    codeString = codeString.toLowerCase();
 		char[] codeChar = codeString.toCharArray();
 		char[] rus = rusAlfavit.getRusAlfavit();
-		CodeAlfavit codeAlfavit = new CodeAlfavit();
+		CodeAlfavit codeAlfavit = new CodeAlfavit(Graphic_ilement.name_code);
 		char[] codeAlfavitChar = codeAlfavit.getCodeAlfavit();
 		char[] rusText = new char[codeChar.length];
 		
@@ -21,14 +23,7 @@ public class Rascodirovanie {
 				if(codeChar[i]== ' '){
 				Sdvig.sdvig ++;
 				codeAlfavitChar = Sdvig.sootvet(rus,codeAlfavitChar);
-			/*	System.out.println("-----------------");
-				System.out.println(text);
-				System.out.println(rus);
-				System.out.println(code);
-				
-				System.out.println("");
-				
-			    System.out.println("Сдвиг +1");*/
+		
 			}
 			
 		
@@ -38,7 +33,7 @@ public class Rascodirovanie {
 			     for (int j= 0; j<codeAlfavitChar.length; j++){
 			    	  
 			         if (codeChar[i] == codeAlfavitChar[j]){
-				     //CodeTexst[i] = codeAlfavit.sootv(j,sdvig);
+				
 			           rusText[i] = rus[j];
 				
 			         }
@@ -49,7 +44,7 @@ public class Rascodirovanie {
 			System.out.println(rusText);
 		return(rusText);
 		
-		// TODO Auto-generated constructor stub
+	
 	}
 
 }

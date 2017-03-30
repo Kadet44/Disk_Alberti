@@ -1,5 +1,7 @@
 package workBrunch;
 
+import graphic_Interface.Graphic_ilement;
+
 public class Codirovanie {
 	public Codirovanie(){}
 	
@@ -9,7 +11,7 @@ public class Codirovanie {
 		public char[] codirovanie_met(String text){
 		RusAlfavit rusAlfavit = new RusAlfavit();
 		char[] rus = rusAlfavit.getRusAlfavit();
-		CodeAlfavit codeAlfavit = new CodeAlfavit();
+		CodeAlfavit codeAlfavit = new CodeAlfavit(Graphic_ilement.name_code);
 		char[] code = codeAlfavit.getCodeAlfavit();
 		
 	
@@ -17,9 +19,7 @@ public class Codirovanie {
 		char[] ArrayTexst = text.toCharArray();
 		char[] codeText = new char[ArrayTexst.length];// переменная для закодированной строки 
 		
-		//System.out.println(ArrayTexst.length);
-		
-//		System.out.println(ArrayTexst[5]);
+
 		
 		for (int i= 0; i< ArrayTexst.length; i++ ){
 			
@@ -36,7 +36,7 @@ public class Codirovanie {
 			     for (int j= 0; j<rus.length; j++){
 			    	  
 			         if (ArrayTexst[i] == rus[j]){
-				     //CodeTexst[i] = codeAlfavit.sootv(j,sdvig);
+				   
 			           codeText[i] = code[j];
 				
 			         }

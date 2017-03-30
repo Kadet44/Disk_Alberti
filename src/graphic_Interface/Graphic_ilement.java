@@ -31,11 +31,13 @@ public class Graphic_ilement extends JFrame {
 	private JPanel buttonPanel;
 	private static final int DEFAUL_WIDTH = 600;
 	private static final int DEFAUL_HEIGHT = 270;
-	private String[] var_coda = { "abcd","ʚʛʜʝʞ"};
+	private String[] var_coda = { "abcd","Ieroglif"};
+	public static String name_code;
 	private String text;
 	boolean metka_code;
 	JButton button_action;
 	JTextArea textFieldRus;
+	JComboBox comboBox;
 	
 	
 	 public JRadioButton getRadiob1() {
@@ -113,7 +115,7 @@ public class Graphic_ilement extends JFrame {
 		checkbox.setBounds(450, 65, 150, 30);
 		buttonPanel.add(checkbox);
 		
-		JComboBox comboBox = new JComboBox(var_coda);
+	    comboBox = new JComboBox(var_coda);
 		comboBox.setBounds(450, 115, 135,30);
 		buttonPanel.add(comboBox);
 		
@@ -154,12 +156,14 @@ public class Graphic_ilement extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
+			 name_code = (String) comboBox.getSelectedItem();
+			System.out.println(name_code);
 			 Codirovanie codirovanie = new Codirovanie();
 			 char[] str = codirovanie.codirovanie_met(textFieldRus.getText());
 	       
 			 String stroka = String.valueOf(str);
 			 textFieldCode.setText(stroka);
-			// TODO Auto-generated method stub
+			
 			
 		}
 
@@ -170,7 +174,8 @@ public class Graphic_ilement extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+			 name_code = (String) comboBox.getSelectedItem();
+			System.out.println(name_code);
 			 Rascodirovanie rascodirovanie = new Rascodirovanie();
 			 char[] decor_char = rascodirovanie.rascodir_met(textFieldRus.getText());
 			 String decor_string = String.valueOf(decor_char);
@@ -182,7 +187,7 @@ public class Graphic_ilement extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			
 			
 		}
 		
