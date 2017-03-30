@@ -1,5 +1,5 @@
 package graphic_Interface;
-
+//Реализовать кодирование с цифрами. Для этого создать несколько вариантов алфавитов кодирования и раскодирования. С цифрами и без
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
