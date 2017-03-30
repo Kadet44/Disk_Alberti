@@ -21,7 +21,7 @@ public class CodeAlfavit {
 	public CodeAlfavit(String name_Code) {
 		
 		if (name_Code == "abcd"){this.formCodeLat_figure(); }
-		if (name_Code == "Ieroglif"){  this.formCodeIerog(); 	}
+		if (name_Code == "Ieroglif"){  this.formCodeIerog_figure(); 	}
 		
 	
 	}
@@ -38,6 +38,12 @@ public class CodeAlfavit {
 	}
 	
 	private void formCodeIerog_figure(){
+		codeAlfavit = new char[43];
+		char[] code_Ierog = {'ʚ','ʛ','5','ʜ','ʝ','9','ʞ','0','ʠ','ʢ','3','ɕ','ȸ','1','ǂ','ƴ','2','×','ɣ','ɪ','ɫ',7,'¥','4','ʌ','ʍ','ʀ','ɯ','ɱ','ʆ','ʉ','ʐ','6','ʔ','ʘ','ȴ','ƙ','ǯ','ȱ','ȓ','8','ȍ'};
+		for (char a: code_Ierog){
+			codeAlfavit[I_n] = a;
+			I_n++;
+		}
 		
 	}
 	
