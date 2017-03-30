@@ -12,12 +12,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 
 import workBrunch.Codirovanie;
 import workBrunch.Rascodirovanie;
@@ -28,10 +31,13 @@ public class Graphic_ilement extends JFrame {
 	private JPanel buttonPanel;
 	private static final int DEFAUL_WIDTH = 600;
 	private static final int DEFAUL_HEIGHT = 270;
+	private String[] var_coda = { "abcd","ʚʛʜʝʞ"};
 	private String text;
 	boolean metka_code;
-	 JButton button_action;
-	 JTextArea textFieldRus;
+	JButton button_action;
+	JTextArea textFieldRus;
+	
+	
 	 public JRadioButton getRadiob1() {
 		return radiob1;
 	}
@@ -99,9 +105,18 @@ public class Graphic_ilement extends JFrame {
 		buttonPanel.add(scroll_code);
 			
 		button_action = new JButton(button_text);
-		 radiob1 = new JRadioButton("Закодировать");
-		 radiob2 = new JRadioButton("Декодировать");
+		radiob1 = new JRadioButton("Закодировать");
+		radiob2 = new JRadioButton("Декодировать");
 		button_action.setBounds(450, 28, 120, 35);
+		
+		JCheckBox checkbox = new JCheckBox("Цифры", true);
+		checkbox.setBounds(450, 65, 150, 30);
+		buttonPanel.add(checkbox);
+		
+		JComboBox comboBox = new JComboBox(var_coda);
+		comboBox.setBounds(450, 115, 135,30);
+		buttonPanel.add(comboBox);
+		
 		
 		ButtonGroup button_group = new ButtonGroup();
 		if (this.metka_code){
@@ -116,11 +131,10 @@ public class Graphic_ilement extends JFrame {
 		buttonPanel.add(button_action);
 		
 	
+	
 		
-		
-		
-		radiob1.setBounds(450, 120, 150, 30);
-		radiob2.setBounds(450, 150, 150, 30);
+		radiob1.setBounds(450, 150, 150, 30);
+		radiob2.setBounds(450, 170, 150, 30);
 		button_group.add(radiob1);
 		button_group.add(radiob2);
 		buttonPanel.add(radiob1);

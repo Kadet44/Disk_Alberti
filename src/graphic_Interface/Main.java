@@ -32,6 +32,7 @@ public class Main {
 			  
 			  Rascodirovanie.setVisible(false);
 			  System.out.println("radiob1_cod");
+			 
 			}
 		});
 		
