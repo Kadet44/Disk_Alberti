@@ -1,11 +1,15 @@
 package graphic_Interface;
 
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
@@ -31,11 +35,22 @@ public static void setLoc_frame(Point loc_frame) {
 public Warning(Graphic_ilement codirovanie) {
 	   codirovanie.setEnabled(false);
 	   JFrame warning_frame = new JFrame("Внимание!!!");
+	    warning_frame.addWindowListener(new WindowAdapter() {
+	    	@Override
+	    	public void windowClosing(WindowEvent e) {
+	    		codirovanie.setEnabled(true);
+	     		super.windowClosing(e);
+	    	}
+		});
 		warning_frame.setSize(300, 150);
 		warning_frame.setLocation(x+150, y+50);
 		warning_frame.setResizable(false);
-		//warning_frame.setLocation(loc_frame);
 		warning_frame.setVisible(true);
+		
+		JLabel lebel = new JLabel("Включите цифры!");
+		lebel.setBounds(73, 25, 200, 40);
+		lebel.setFont(new Font("Verdana", Font.BOLD, 16));
+		
 		
 		JPanel panel_warning = new JPanel();
 		panel_warning.setLayout(null);
@@ -47,10 +62,11 @@ public Warning(Graphic_ilement codirovanie) {
 			public void actionPerformed(ActionEvent e) {
 				codirovanie.setEnabled(true);
 				warning_frame.dispose();
-				//warning_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			
 				
 			}
 		});
+		panel_warning.add(lebel);
 		panel_warning.add(button_warning);
 		warning_frame.add(panel_warning);
 		
