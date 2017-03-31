@@ -4,7 +4,9 @@ public class RusAlfavit {
     private int n =0;
     private int n_figure =0;
 	private char[] rusAlfavit;
+	public static boolean is_select;
     public RusAlfavit() {
+    	System.out.println("RusAlf =" + is_select);
 		
 	rusAlfavit = new char[43];
 	 char[] rus_char_figure ={'а','б','в','г','д','е','ж','з','и','й','к','л','м','н','о','п','р',

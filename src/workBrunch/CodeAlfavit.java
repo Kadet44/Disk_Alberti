@@ -6,7 +6,7 @@ public class CodeAlfavit {
 	private int I_n =0;
 	private int n1=26;
 	private char[] codeAlfavit; 
-	
+	public static boolean is_select;
 	public char[] getCodeAlfavit() {
 		return codeAlfavit;
 	}
@@ -19,6 +19,7 @@ public class CodeAlfavit {
 	}
 
 	public CodeAlfavit(String name_Code) {
+		System.out.println("Code_alfasbit is selected = " + is_select);
 		
 		if (name_Code == "abcd"){this.formCodeLat_figure(); }
 		if (name_Code == "Ieroglif"){  this.formCodeIerog_figure(); 	}
