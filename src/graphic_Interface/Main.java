@@ -32,6 +32,7 @@ public class Main {
 			  if(radiob1_cod.isSelected()) 
 			  
 			  Rascodirovanie.setVisible(false);
+			//  codirovanie.setCheckbox(codirovanie.getCheckbox().isSelected());
 			  System.out.println("radiob1_cod");
 			 
 			}
@@ -47,7 +48,8 @@ public class Main {
 				Rascodirovanie.setVisible(true);
 				codirovanie.setVisible(false);
 				radiob2_decod.setSelected(true);
-
+				//System.out.println(" Из main "+codirovanie.getCheckbox().isSelected());
+                Rascodirovanie.setCheckbox(codirovanie.getCheckbox().isSelected());
 		    	System.out.println("radiob2_cod");
 				
 				
@@ -62,11 +64,12 @@ public class Main {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			  if(radiob1_decod.isSelected()) 
-			
+			  
 			  codirovanie.setLocation(Rascodirovanie.getLocation());
+			  codirovanie.setCheckbox(Rascodirovanie.getCheckbox().isSelected());
 			  codirovanie.setVisible(true);
 			  Rascodirovanie.setVisible(false);
-			
+			  
 			
 			  radiob1_cod.setSelected(true);
 			  System.out.println("radiob1_decod");

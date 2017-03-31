@@ -22,6 +22,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
+import workBrunch.CodeAlfavit;
 import workBrunch.Codirovanie;
 import workBrunch.Rascodirovanie;
 import workBrunch.RusAlfavit;
@@ -38,9 +39,17 @@ public class Graphic_ilement extends JFrame {
 	JButton button_action;
 	JTextArea textFieldRus;
 	JComboBox comboBox;
+	private JCheckBox checkbox;
 	
-	
-	 public JRadioButton getRadiob1() {
+	 public void setCheckbox(boolean is_selected) {
+		this.checkbox.setSelected(is_selected);
+	}
+
+	public JCheckBox getCheckbox() {
+		return checkbox;
+	}
+
+	public JRadioButton getRadiob1() {
 		return radiob1;
 	}
 
@@ -111,7 +120,17 @@ public class Graphic_ilement extends JFrame {
 		radiob2 = new JRadioButton("Декодировать");
 		button_action.setBounds(450, 28, 120, 35);
 		
-		JCheckBox checkbox = new JCheckBox("Цифры", true);
+	    checkbox = new JCheckBox("Цифры");
+	    checkbox.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			CodeAlfavit.is_select = checkbox.isSelected();
+			RusAlfavit.is_select = checkbox.isSelected();
+			System.out.println("Graphic_inter = "+checkbox.isSelected());
+				
+			}
+		});
 		checkbox.setBounds(450, 65, 150, 30);
 		buttonPanel.add(checkbox);
 		
@@ -175,7 +194,7 @@ public class Graphic_ilement extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			 name_code = (String) comboBox.getSelectedItem();
-			System.out.println(name_code);
+			 System.out.println(name_code);
 			 Rascodirovanie rascodirovanie = new Rascodirovanie();
 			 char[] decor_char = rascodirovanie.rascodir_met(textFieldRus.getText());
 			 String decor_string = String.valueOf(decor_char);
