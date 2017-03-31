@@ -1,5 +1,5 @@
 package graphic_Interface;
-
+//Реализовать кодирование с цифрами. Для этого создать несколько вариантов алфавитов кодирования и раскодирования. С цифрами и без
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +20,7 @@ public class Main {
   
     codirovanie.setVisible(true);
     
+    
     JRadioButton radiob2_cod = codirovanie.getRadiob2();
     JRadioButton radiob2_decod = Rascodirovanie.getRadiob2();
 	JRadioButton radiob1_cod = codirovanie.getRadiob1();
@@ -31,7 +32,9 @@ public class Main {
 			  if(radiob1_cod.isSelected()) 
 			  
 			  Rascodirovanie.setVisible(false);
+			//  codirovanie.setCheckbox(codirovanie.getCheckbox().isSelected());
 			  System.out.println("radiob1_cod");
+			 
 			}
 		});
 		
@@ -40,10 +43,13 @@ public class Main {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				codirovanie.setVisible(false);
+				
+				Rascodirovanie.setLocation(codirovanie.getLocation());
 				Rascodirovanie.setVisible(true);
+				codirovanie.setVisible(false);
 				radiob2_decod.setSelected(true);
-
+				//System.out.println(" Из main "+codirovanie.getCheckbox().isSelected());
+                Rascodirovanie.setCheckbox(codirovanie.getCheckbox().isSelected());
 		    	System.out.println("radiob2_cod");
 				
 				
@@ -58,8 +64,13 @@ public class Main {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			  if(radiob1_decod.isSelected()) 
+			  
+			  codirovanie.setLocation(Rascodirovanie.getLocation());
+			  codirovanie.setCheckbox(Rascodirovanie.getCheckbox().isSelected());
 			  codirovanie.setVisible(true);
 			  Rascodirovanie.setVisible(false);
+		  
+			
 			  radiob1_cod.setSelected(true);
 			  System.out.println("radiob1_decod");
 			}
@@ -70,9 +81,11 @@ public class Main {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
 				Rascodirovanie.setVisible(true);
 				codirovanie.setVisible(false);
+				//Rascodirovanie.setLocation(codirovanie.getLocation());
+				
+		
 				
 				System.out.println("radiob2_decod");
 				

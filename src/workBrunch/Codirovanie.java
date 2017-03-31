@@ -1,7 +1,17 @@
 package workBrunch;
 
+import javax.swing.JFrame;
+
+import graphic_Interface.Graphic_ilement;
+import graphic_Interface.Warning;
+
 public class Codirovanie {
-	public Codirovanie(){}
+	public static boolean is_select;
+	Graphic_ilement codirovanie;
+	private boolean find_figure = false;
+	public Codirovanie(Graphic_ilement codirovanie){
+		this.codirovanie = codirovanie;
+	}
 	
 	public Codirovanie(String codeString) {
 		codirovanie_met(codeString);
@@ -9,7 +19,7 @@ public class Codirovanie {
 		public char[] codirovanie_met(String text){
 		RusAlfavit rusAlfavit = new RusAlfavit();
 		char[] rus = rusAlfavit.getRusAlfavit();
-		CodeAlfavit codeAlfavit = new CodeAlfavit();
+		CodeAlfavit codeAlfavit = new CodeAlfavit(Graphic_ilement.name_code);
 		char[] code = codeAlfavit.getCodeAlfavit();
 		
 	
@@ -17,17 +27,29 @@ public class Codirovanie {
 		char[] ArrayTexst = text.toCharArray();
 		char[] codeText = new char[ArrayTexst.length];// переменная для закодированной строки 
 		
-		//System.out.println(ArrayTexst.length);
+
+		char[] mas_char_figure ={'0','1','2','3','4','5','6','7','8','9'};
 		
-//		System.out.println(ArrayTexst[5]);
-		
-		for (int i= 0; i< ArrayTexst.length; i++ ){
+		for (int i= 0; i< ArrayTexst.length; i++){
+			
+			 if(!is_select && !find_figure){
+			 for(char a: mas_char_figure){
+							if(ArrayTexst[i] == a){
+							System.out.println("A Я нашел цифру");
+							find_figure = true;
+							Warning warning = new Warning(codirovanie);
+							break;
+						    }
+						
+					}
+			}
 			
 			if(ArrayTexst[i]== ' '){
 				Sdvig.sdvig ++;
 				code = Sdvig.sootvet(rus,code);
 				codeText[i] = ' ';
 			}
+			
 			
 		
 			
@@ -36,7 +58,7 @@ public class Codirovanie {
 			     for (int j= 0; j<rus.length; j++){
 			    	  
 			         if (ArrayTexst[i] == rus[j]){
-				     //CodeTexst[i] = codeAlfavit.sootv(j,sdvig);
+				   
 			           codeText[i] = code[j];
 				
 			         }
