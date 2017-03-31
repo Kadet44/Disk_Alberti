@@ -1,8 +1,12 @@
 package workBrunch;
 
+import javax.swing.JFrame;
+
 import graphic_Interface.Graphic_ilement;
+import graphic_Interface.Warning;
 
 public class Codirovanie {
+	public static boolean is_select;
 	public Codirovanie(){}
 	
 	public Codirovanie(String codeString) {
@@ -20,14 +24,25 @@ public class Codirovanie {
 		char[] codeText = new char[ArrayTexst.length];// переменная для закодированной строки 
 		
 
+		char[] mas_char_figure ={'0','1','2','3','4','5','6','7','8','9'};
 		
-		for (int i= 0; i< ArrayTexst.length; i++ ){
+		for (int i= 0; i< ArrayTexst.length; i++){
+			
+			if(!is_select){
+					for(char a: mas_char_figure){
+							if(ArrayTexst[i] == a){
+							System.out.println("A Я нашел цифру");
+							Warning warning = new Warning();
+						    }
+					}
+			}
 			
 			if(ArrayTexst[i]== ' '){
 				Sdvig.sdvig ++;
 				code = Sdvig.sootvet(rus,code);
 				codeText[i] = ' ';
 			}
+			
 			
 		
 			

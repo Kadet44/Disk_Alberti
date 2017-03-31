@@ -32,6 +32,8 @@ public class Graphic_ilement extends JFrame {
 	private JPanel buttonPanel;
 	private static final int DEFAUL_WIDTH = 600;
 	private static final int DEFAUL_HEIGHT = 270;
+	int x;
+	int y;
 	private String[] var_coda = { "abcd","Ieroglif"};
 	public static String name_code;
 	private String text;
@@ -94,8 +96,8 @@ public class Graphic_ilement extends JFrame {
 		this.metka_code = metka_code;
 		setSize(DEFAUL_WIDTH, DEFAUL_HEIGHT);
 		Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-		int x = (int) ((screenSize.getWidth() - this.getWidth()) / 2);
-		int y = (int) ((screenSize.getHeight() - this.getHeight()) / 2);
+		 x = (int) ((screenSize.getWidth() - this.getWidth()) / 2);
+		 y = (int) ((screenSize.getHeight() - this.getHeight()) / 2);
 		this.setBounds(x, y, this.getWidth(), this.getHeight());
 		setResizable(false);
 		
@@ -127,6 +129,7 @@ public class Graphic_ilement extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			CodeAlfavit.is_select = checkbox.isSelected();
 			RusAlfavit.is_select = checkbox.isSelected();
+			Codirovanie.is_select = checkbox.isSelected();
 			System.out.println("Graphic_inter = "+checkbox.isSelected());
 				
 			}
@@ -176,7 +179,8 @@ public class Graphic_ilement extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			
 			 name_code = (String) comboBox.getSelectedItem();
-			System.out.println(name_code);
+			 System.out.println(name_code);
+			 Warning.setLoc_frame(Graphic_ilement.this.getLocation());// установка расположения окна для warning
 			 Codirovanie codirovanie = new Codirovanie();
 			 char[] str = codirovanie.codirovanie_met(textFieldRus.getText());
 	       
