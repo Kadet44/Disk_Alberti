@@ -67,7 +67,7 @@ public class CodeAlfavit {
 	
 	private void formCodeLat(){ //Генерация начального кодирующего алф. сделать не по порядку алфавита 
 		codeAlfavit = new char[33];
-		char[] code_Lat ={'v','w','1','x','m','t','u','z','y','2','3','n','o','p','l','s','q','r','4','i','c','j','d','e','k','a','g','f','b','h','5','6'};
+		char[] code_Lat ={'v','t','u','f','b','h','o','p','l','i','w','y','2','s','q','r','4','3','n','j','d','e','k','1','x','m','c','z','a','g','5','6'};
 		for(char i:code_Lat)		
 	    {
 			//System.out.print(i);
