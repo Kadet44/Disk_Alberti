@@ -69,7 +69,7 @@ public class Main {
 			  codirovanie.setCheckbox(Rascodirovanie.getCheckbox().isSelected());
 			  codirovanie.setVisible(true);
 			  Rascodirovanie.setVisible(false);
-			  
+		  
 			
 			  radiob1_cod.setSelected(true);
 			  System.out.println("radiob1_decod");

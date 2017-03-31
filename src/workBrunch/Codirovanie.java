@@ -7,7 +7,11 @@ import graphic_Interface.Warning;
 
 public class Codirovanie {
 	public static boolean is_select;
-	public Codirovanie(){}
+	Graphic_ilement codirovanie;
+	private boolean find_figure = false;
+	public Codirovanie(Graphic_ilement codirovanie){
+		this.codirovanie = codirovanie;
+	}
 	
 	public Codirovanie(String codeString) {
 		codirovanie_met(codeString);
@@ -28,12 +32,15 @@ public class Codirovanie {
 		
 		for (int i= 0; i< ArrayTexst.length; i++){
 			
-			if(!is_select){
-					for(char a: mas_char_figure){
+			 if(!is_select && !find_figure){
+			 for(char a: mas_char_figure){
 							if(ArrayTexst[i] == a){
 							System.out.println("A Я нашел цифру");
-							Warning warning = new Warning();
+							find_figure = true;
+							Warning warning = new Warning(codirovanie);
+							break;
 						    }
+						
 					}
 			}
 			

@@ -181,7 +181,7 @@ public class Graphic_ilement extends JFrame {
 			 name_code = (String) comboBox.getSelectedItem();
 			 System.out.println(name_code);
 			 Warning.setLoc_frame(Graphic_ilement.this.getLocation());// установка расположения окна для warning
-			 Codirovanie codirovanie = new Codirovanie();
+			 Codirovanie codirovanie = new Codirovanie(Graphic_ilement.this);
 			 char[] str = codirovanie.codirovanie_met(textFieldRus.getText());
 	       
 			 String stroka = String.valueOf(str);
