@@ -21,11 +21,19 @@ public class CodeAlfavit {
 	public CodeAlfavit(String name_Code) {
 		System.out.println("Code_alfasbit is selected = " + is_select);
 		
-		if (name_Code == "abcd"){this.formCodeLat_figure(); }
-		if (name_Code == "Ieroglif"){  this.formCodeIerog_figure(); 	}
+		 if (name_Code == "abcd"){
+				if(is_select){this.formCodeLat_figure();}
+				else{this.formCodeLat();}
+		 }
+		
+		 if (name_Code == "Ieroglif"){  
+		 		if(is_select){this.formCodeIerog_figure();}
+				else{this.formCodeIerog();}
+		 }
+	}
 		
 	
-	}
+	
 	private void formCodeLat_figure(){
 		codeAlfavit = new char[43];
 		char[] code_Lat ={'v','w','1','x','m','t','u','z','y','2','3','n','o','p','l','s','q','r','4','i','c','j','d','e','k','a','g','f','b','h','5','6','ʚ','ʛ','ʜ','ʝ','ʞ','ʠ','ʢ','ɕ','ȸ','ǂ'};
